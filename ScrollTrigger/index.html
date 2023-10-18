@@ -28,17 +28,25 @@
     let tl = gsap.timeline({
       scrollTrigger: {
         trigger: '.animated-element',
-        start: 'top center',
-        end: 'bottom center',
-        scrub: true,
-        markers: true,
+        start: '-50% center',
+        end: '200% center',
+        scrub: false,
+        markers: false,
+        //toggleActions: 'restart pause reverse pause'
+        //toggleActions: 'onEnter onLeave onEnterBack onLeaveBack' 
+        //toggleActions: 'play pause resume reset restart complete reverse none'
+        toggleActions: 'play reverse play reverse', // if scrub is true, play and reverse will be pause and resume if false it will wokrs as normal
+
 
       }
     })
 
     tl.to('.animated-element', {
-      x: 800
+      x: 800,
+      duretion: 5
     }) 
+
+
 
     // Smooth scroll
     const lenis = new Lenis()
